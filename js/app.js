@@ -68,3 +68,23 @@ function ajouterTacheDOM(t) {
 
   listContainer.append(li);
 }
+
+listContainer.on("click", ".deleteBtn", function () {
+  const li = $(this).closest("li");
+  const id = li.data("id");
+
+  $.ajax({
+    url: "server/api/delete_task.php",
+    type: "DELETE",
+    contentType: "application/json",
+    data: JSON.stringify({ id }),
+    dataType: "json",
+    success: function (response) {
+      li.remove();
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+      alert("Erreur lors de la suppression : " + textStatus);
+      console.error("Détail :", errorThrown);
+    },
+  });
+});
