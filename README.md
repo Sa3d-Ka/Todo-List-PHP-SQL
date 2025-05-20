@@ -118,5 +118,3 @@ http://localhost/Todo-List-PHP-SQL/
 ---
 
 ⭐ If you like this project, don’t forget to star the repo!
-
-```
