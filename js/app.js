@@ -88,3 +88,28 @@ listContainer.on("click", ".deleteBtn", function () {
     },
   });
 });
+
+listContainer.on("click", ".toggle", function () {
+  const li = $(this).closest("li");
+  const id = li.data("id");
+  let done = !li.hasClass("checked");
+  done = Number(done)
+
+  $.ajax({
+    url: "server/api/update_task.php",
+    type: "PUT",
+    contentType: "application/json",
+    data: JSON.stringify({ id, done }),
+    success: () => {
+      li.toggleClass("checked");
+
+      // Changer l'icône dynamiquement
+      if (done) {
+        $(this).removeClass("fa-regular").addClass("fa-solid");
+      } else {
+        $(this).removeClass("fa-solid").addClass("fa-regular");
+      }
+    },
+    error: (jq) => alert("Erreur de mise à jour : " + jq.status),
+  });
+});
