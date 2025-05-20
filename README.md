@@ -3,7 +3,7 @@
 A modern, responsive ToDo list application built with PHP, MySQL, JavaScript, jQuery, and AJAX.  
 Users can add, complete, edit, and delete tasks dynamically with real-time feedback.
 
-> 🚀 **Live Demo:** [todoiist.free.nf](https://todoiist.free.nf/){:target="_blank"}
+> 🚀 **Live Demo:** <a href="https://todoiist.free.nf/" target="_blank">todoiist.free.nf</a>
 
 ---
 
